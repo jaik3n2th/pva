@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My CSV Website</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Topic</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <script src="https://cdn.jsdelivr.net/npm/csvtojson/browser/csvtojson.min.js"></script>
+            <script>
+                fetch('TurnerTopics.csv')
+                .then(response => response.text())
+                .then(data => {
+                    const json = csvToJson().fromString(data);
+                    json.forEach(row => {
+                        const tr = document.createElement('tr');
+                        const td1 = document.createElement('td');
+                        td1.textContent = row['Topic'];
+                        const td2 = document.createElement('td');
+                        td2.textContent = row['Description'];
+                        tr.appendChild(td1);
+                        tr.appendChild(td2);
+                        document.querySelector('tbody').appendChild(tr);
+                    });
+                });
+            </script>
+        </tbody>
+    </table>
+</body>
+</html>
