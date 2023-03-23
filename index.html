@@ -15,7 +15,7 @@
         <tbody>
             <script src="https://cdn.jsdelivr.net/npm/csvtojson/browser/csvtojson.min.js"></script>
             <script>
-                fetch('https://github.com/jaik3n2th/pva/blob/main/TurnerTopics.csv')
+                fetch('https://github.com/jaik3n2th/pva/blob/gh-pages/TurnerTopics.csv')
                 .then(response => response.text())
                 .then(data => {
                     const json = csvToJson().fromString(data);
