@@ -14,7 +14,7 @@
         <tbody>
             <script src="https://cdn.jsdelivr.net/npm/csvtojson/browser/csvtojson.min.js"></script>
             <script>
-                fetch('pva/TurnerTopics.csv')
+                fetch('TurnerTopics.csv')
                 .then(response => response.text())
                 .then(data => {
                     const json = csvToJson().fromString(data);
